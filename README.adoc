@@ -1,4 +1,2 @@
 = Practical Software Architecture Patterns with Java
 :toc: auto
-
-Practical Software Architecture Patterns with Java, by BPB Publications

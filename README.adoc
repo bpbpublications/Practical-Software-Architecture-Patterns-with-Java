@@ -1,2 +1,11 @@
 = Practical Software Architecture Patterns with Java
 :toc: auto
+
+Design, Structure, and Evolve Scalable Systems from Monoliths to AI-Driven Architectures
+
+
+Master software architecture patterns with Java in this practical guide that bridges foundational concepts and real-world implementation. Explore how architecture decisions shape systems through hands-on examples, covering abstraction, design principles, and core patterns used to build scalable and maintainable applications.
+
+Dive into essential architectural styles and integration approaches, including MVC, Hexagonal Architecture, modular monoliths, microservices, REST, event-driven systems, and batch processing. Learn how to structure systems effectively, define clear boundaries, and apply the right patterns based on context and trade-offs. With practical Java implementations, you will gain the skills to design systems that evolve safely over time.
+
+Expand your architectural thinking with modern challenges, including AI-driven systems. Discover emerging patterns such as Retrieval-Augmented Generation (RAG) and Model Context Protocol (MCP), and understand how to integrate AI into enterprise architectures responsibly. Whether designing new systems or modernizing existing ones, this book provides the insights and practices needed to build robust, adaptable software.

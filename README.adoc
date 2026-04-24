@@ -3,6 +3,19 @@
 
 This repository contains practical Java examples that illustrate software architecture concepts, patterns, and modern AI-driven designs, focusing on real-world trade-offs and system evolution.
 
+== Getting Started
+
+Clone the repository and build the project:
+
+[source,bash]
+----
+git clone <repo-url>
+cd <repo>
+mvn clean install
+----
+
+Run specific examples by navigating to each module.
+
 == Project Structure
 
 *Part 1 – Foundations*: Core principles of software architecture, covering abstraction, system structure, boundaries, and domain modeling to manage complexity and align with business needs.

@@ -6,7 +6,7 @@ This repository contains practical Java examples that illustrate software archit
 == Project Structure
 
 *Part 1 – Foundations*: Core principles of software architecture, covering abstraction, system structure, boundaries, and domain modeling to manage complexity and align with business needs.
-
 *Part 2 – Architecture Patterns*: Practical patterns such as MVC, Hexagonal Architecture, monoliths, microservices, REST, and event-driven systems, including real-world trade-offs and Java implementations.
-
 *Part 3 – AI for Architects*: Modern AI-driven architecture concepts, including LLMs, embeddings, RAG, MCP, and agentic systems, focusing on how AI reshapes system design.
+
+

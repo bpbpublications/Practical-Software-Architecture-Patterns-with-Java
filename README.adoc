@@ -25,24 +25,23 @@ Run specific examples by navigating to each module.
 
 == What You’ll Find Here
 
-- *Chapter 1 – Software Engineering, Architecture, and Abstraction*: Understand architecture as decision-making, focusing on structure, trade-offs, and system evolution.
-- *Chapter 2 – Software Design Principles*: Learn how to structure code with clear boundaries, reduce coupling, and apply SOLID principles.
-- *Chapter 3 – Documentation and Domain Modeling*: Explore architecture communication and Domain-Driven Design to align software with business needs.
+- *Chapter 1 – Software Engineering, Architecture, and Abstraction*: Understand architecture as decision-making, focusing on structure, trade-offs, and system evolution. link:chapter-01/[View code]
+- *Chapter 2 – Software Design Principles*: Learn how to structure code with clear boundaries, reduce coupling, and apply SOLID principles. link:chapter-02/[View code]
+- *Chapter 3 – Documentation and Domain Modeling*: Explore architecture communication and Domain-Driven Design to align software with business needs. link:chapter-03/[View code]
 
-- *Chapter 4 – MVC*: Apply the Model–View–Controller pattern to structure user-facing applications.
-- *Chapter 5 – Hexagonal Architecture*: Isolate business logic using ports and adapters for flexibility and testability.
-- *Chapter 6 – API Communication Patterns*: Design APIs using REST, gRPC, and WebSockets with clear contracts and trade-offs.
-- *Chapter 7 – Event-Driven Architecture*: Build scalable systems with asynchronous communication and event-based design.
-- *Chapter 8 – Monoliths and Microservices*: Compare architectural styles and make informed decisions based on context.
+- *Chapter 4 – MVC*: Apply the Model–View–Controller pattern to structure user-facing applications. link:chapter-04/[View code]
+- *Chapter 5 – Hexagonal Architecture*: Isolate business logic using ports and adapters for flexibility and testability. link:chapter-05/[View code]
+- *Chapter 6 – API Communication Patterns*: Design APIs using REST, gRPC, and WebSockets with clear contracts and trade-offs. link:chapter-06/[View code]
+- *Chapter 7 – Event-Driven Architecture*: Build scalable systems with asynchronous communication and event-based design. link:chapter-07/[View code]
+- *Chapter 8 – Monoliths and Microservices*: Compare architectural styles and make informed decisions based on context. link:chapter-08/[View code]
 
-- *Chapter 9 – System Execution Models*: Understand batch processing, workflows, and long-running processes in production systems.
-- *Chapter 10 – Testing Strategies*: Validate systems using unit, BDD, and integration testing while enforcing architecture.
+- *Chapter 9 – System Execution Models*: Understand batch processing, workflows, and long-running processes in production systems. link:chapter-09/[View code]
+- *Chapter 10 – Testing Strategies*: Validate systems using unit, BDD, and integration testing while enforcing architecture. link:chapter-10/[View code]
 
-- *Chapter 11 – AI for Architects*: Learn core AI concepts and how probabilistic systems impact architecture decisions.
-- *Chapter 12 – Agentic Architectures*: Design systems with AI agents using reasoning and action loops.
-- *Chapter 13 – RAG*: Integrate external knowledge into AI systems using retrieval-based patterns.
-- *Chapter 14 – MCP*: Standardize AI integration with external tools and services.
-
+- *Chapter 11 – AI for Architects*: Learn core AI concepts and how probabilistic systems impact architecture decisions. link:chapter-11/[View code]
+- *Chapter 12 – Agentic Architectures*: Design systems with AI agents using reasoning and action loops. link:chapter-12/[View code]
+- *Chapter 13 – RAG*: Integrate external knowledge into AI systems using retrieval-based patterns. link:chapter-13/[View code]
+- *Chapter 14 – MCP*: Standardize AI integration with external tools and services. link:chapter-14/[View code]
 
 == Requirements
 

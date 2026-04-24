@@ -10,8 +10,10 @@ Dive into essential architectural styles and integration approaches, including M
 
 Expand your architectural thinking with modern challenges, including AI-driven systems. Discover emerging patterns such as Retrieval-Augmented Generation (RAG) and Model Context Protocol (MCP), and understand how to integrate AI into enterprise architectures responsibly. Whether designing new systems or modernizing existing ones, this book provides the insights and practices needed to build robust, adaptable software.
 
-== Sections
+== Project Structure
 
-* *Part 1*: Foundations: This section establishes the core principles of software architecture. It introduces software engineering fundamentals, the role of architecture, and the importance of abstraction in managing complexity. Readers will explore how structure, boundaries, and design principles influence system evolution and long-term maintainability. It also covers essential practices such as architecture documentation and domain modeling, ensuring systems are well-communicated and aligned with business needs.
-* *Part 2*: Architecture Patterns and System Design – This section explores the core architecture patterns used in modern systems. It covers MVC, Hexagonal Architecture, monoliths and microservices, and communication patterns such as REST and event-driven systems. In addition, it addresses how systems behave in production, including batch processing, long-running workflows, and testing strategies. Each pattern is presented with its context, structure, and trade-offs, supported by practical Java implementations.
-* *Part 3*: AI for Software Architects - This section introduces modern architectural challenges driven by AI. It updates the architect’s vocabulary to include concepts such as large language models, embeddings, and probabilistic systems. It then explores emerging patterns such as AI agents and agentic architectures, Retrieval-Augmented Generation (RAG), and Model Context Protocol (MCP), demonstrating how AI integrates into enterprise systems and influences architectural decisions.
+*Part 1 – Foundations*: Core principles of software architecture, covering abstraction, system structure, boundaries, and domain modeling to manage complexity and align with business needs.
+
+*Part 2 – Architecture Patterns*: Practical patterns such as MVC, Hexagonal Architecture, monoliths, microservices, REST, and event-driven systems, including real-world trade-offs and Java implementations.
+
+*Part 3 – AI for Architects*: Modern AI-driven architecture concepts, including LLMs, embeddings, RAG, MCP, and agentic systems, focusing on how AI reshapes system design.

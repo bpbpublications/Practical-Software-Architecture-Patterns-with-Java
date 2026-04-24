@@ -16,6 +16,13 @@ mvn clean install
 
 Run specific examples by navigating to each module.
 
+== What You’ll Learn
+
+- Architecture as decision-making and trade-offs
+- Structuring systems with clear boundaries
+- Applying patterns in real-world scenarios
+- Integrating AI into modern architectures
+
 == Project Structure
 
 *Part 1 – Foundations*: Core principles of software architecture, covering abstraction, system structure, boundaries, and domain modeling to manage complexity and align with business needs.
@@ -44,13 +51,6 @@ Run specific examples by navigating to each module.
 - *Chapter 12 – Agentic Architectures*: Design systems with AI agents using reasoning and action loops. link:chapter-12/[View code]
 - *Chapter 13 – RAG*: Integrate external knowledge into AI systems using retrieval-based patterns. link:chapter-13/[View code]
 - *Chapter 14 – MCP*: Standardize AI integration with external tools and services. link:chapter-14/[View code]
-
-== What You’ll Learn
-
-- Architecture as decision-making and trade-offs
-- Structuring systems with clear boundaries
-- Applying patterns in real-world scenarios
-- Integrating AI into modern architectures
 
 == Requirements
 

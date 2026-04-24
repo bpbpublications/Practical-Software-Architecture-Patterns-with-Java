@@ -29,3 +29,13 @@ This repository contains practical Java examples that illustrate software archit
 - *Chapter 12 – Agentic Architectures*: Design systems with AI agents using reasoning and action loops.
 - *Chapter 13 – RAG*: Integrate external knowledge into AI systems using retrieval-based patterns.
 - *Chapter 14 – MCP*: Standardize AI integration with external tools and services.
+
+
+== Requirements
+
+To run the examples in this repository, you will need:
+
+- *Java 21*: Required to compile and run all code samples.
+- *Maven*: Used for dependency management and project builds.
+- *Docker*: Optional but recommended for running supporting services and environments.
+- *Git*: Required to clone and manage the repository.

@@ -52,3 +52,13 @@ To run the examples in this repository, you will need:
 - *Maven*: Used for dependency management and project builds.
 - *Docker*: Optional but recommended for running supporting services and environments.
 - *Git*: Required to clone and manage the repository.
+
+
+== Repository Structure
+
+Each chapter is organized into its own module or folder:
+
+- `chapter-01/` – Foundations and abstraction
+- `chapter-02/` – Design principles
+- ...
+- `chapter-14/` – MCP and AI integration

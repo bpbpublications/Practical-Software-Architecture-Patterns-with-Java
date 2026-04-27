@@ -31,7 +31,6 @@ Run specific examples by navigating to each module.
 
 *Part 3 – AI for Architects*: Modern AI-driven architecture concepts, including LLMs, embeddings, RAG, MCP, and agentic systems, focusing on how AI reshapes system design.
 
-
 == What You’ll Find Here
 
 - *Chapter 1 – Software Engineering, Architecture, and Abstraction*: Understand architecture as decision-making, focusing on structure, trade-offs, and system evolution. link:chapter-01/[View code]

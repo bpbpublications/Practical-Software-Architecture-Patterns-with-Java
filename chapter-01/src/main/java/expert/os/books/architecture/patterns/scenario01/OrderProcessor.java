@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.chapter01;
+package expert.os.books.architecture.patterns.scenario01;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

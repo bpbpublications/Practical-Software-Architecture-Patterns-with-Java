@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.chapter01;
+package expert.os.books.architecture.patterns.scenario01;
 
 public class OrderProcessor2 {
     private final OrderStorage storage;

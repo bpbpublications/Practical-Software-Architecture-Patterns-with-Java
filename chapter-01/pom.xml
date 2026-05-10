@@ -17,7 +17,6 @@
         <maven.compiler.target>21</maven.compiler.target>
         <junit.version>6.0.3</junit.version>
         <mockito.verson>5.23.0</mockito.verson>
-        <maven.checkstyle.plugin.version>3.1.0</maven.checkstyle.plugin.version>
         <maven.compile.version>3.15.0</maven.compile.version>
         <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>

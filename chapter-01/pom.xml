@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>expert.os.books.ddd</groupId>
-    <artifactId>chapter-03</artifactId>
+    <groupId>expert.os.books.architecture.patterns</groupId>
+    <artifactId>chapter-01</artifactId>
     <version>1.0.0</version>
 
     <name>chapter-01</name>

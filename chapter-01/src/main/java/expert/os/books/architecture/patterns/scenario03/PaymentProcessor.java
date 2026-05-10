@@ -1,6 +1,8 @@
 package expert.os.books.architecture.patterns.scenario03;
 
+import org.joda.money.Money;
+
 public interface PaymentProcessor {
 
-    void processPayment(double amount);
+    void processPayment(Money amount);
 }

@@ -1,8 +1,10 @@
 package expert.os.books.architecture.patterns.scenario03;
 
+import org.joda.money.Money;
+
 class PayPalStrategy implements PaymentProcessor {
     @Override
-    public void processPayment(double amount) {
+    public void processPayment(Money amount) {
         // Complex algorithm involving Luhn checks, HTTP calls, etc.
         System.out.println("Processing paypal: $" + amount);
     }

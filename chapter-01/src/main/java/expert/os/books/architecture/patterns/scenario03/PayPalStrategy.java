@@ -5,7 +5,14 @@ import org.joda.money.Money;
 class PayPalStrategy implements PaymentProcessor {
     @Override
     public void processPayment(Money amount) {
-        // Complex algorithm involving Luhn checks, HTTP calls, etc.
-        System.out.println("Processing paypal: $" + amount);
+        // Complex logic:
+        // - HTTP communication
+        // - Authentication
+        // - Retry strategies
+        // - External API integration
+
+        System.out.println(
+                "Processing PayPal payment: " + amount
+        );
     }
 }

@@ -12,6 +12,7 @@
     <description>The Domain Driven Design Java samples book</description>
 
     <modules>
+        <module>chapter-01</module>
     </modules>
     
 </project>

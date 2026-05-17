@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.scenario01;
+package expert.os.books.architecture.patterns.scenario01.anemic;
 
 class Customer {
     private int loyaltyPoints;

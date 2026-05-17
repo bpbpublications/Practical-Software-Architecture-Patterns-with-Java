@@ -1,7 +1,13 @@
 package expert.os.books.architecture.patterns.scenario02.before;
 
+import java.math.BigDecimal;
+
 public class Customer {
-    public Wallet getWallet() {
-        return null;
+
+    private Wallet wallet;
+
+
+    public void charge(BigDecimal amount) {
+        wallet.getDefaultPaymentMethod().charge(amount);
     }
 }

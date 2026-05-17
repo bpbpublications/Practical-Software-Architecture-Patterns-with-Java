@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>expert.os.books.architecture.patterns</groupId>
-    <artifactId>chapter-01</artifactId>
+    <artifactId>chapter-02</artifactId>
     <version>1.0.0</version>
 
-    <name>chapter-01</name>
+    <name>chapter-02</name>
     <url>http://www.os.expert</url>
 
     <properties>

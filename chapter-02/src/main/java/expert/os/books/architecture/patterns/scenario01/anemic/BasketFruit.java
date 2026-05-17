@@ -4,17 +4,17 @@ import java.util.List;
 
 public class BasketFruit {
 
-    private List<String> fruits;
+    private List<Fruit> fruits;
 
-    public BasketFruit(List<String> fruits) {
+    public BasketFruit(List<Fruit> fruits) {
         this.fruits = fruits;
     }
 
-    public List<String> getFruits() {
+    public List<Fruit> getFruits() {
         return fruits;
     }
 
-    public void setFruits(List<String> fruits) {
+    public void setFruits(List<Fruit> fruits) {
         this.fruits = fruits;
     }
 }

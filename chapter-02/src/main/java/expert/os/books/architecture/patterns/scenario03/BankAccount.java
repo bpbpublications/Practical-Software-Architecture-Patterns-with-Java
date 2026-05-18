@@ -24,4 +24,8 @@ public class BankAccount {
     static BankAccountBuilder builder() {
         return new BankAccountBuilder();
     }
+
+    static FluentAccount.BuildStep withNumber(String number) {
+        return FluentAccount.account().withNumber(number);
+    }
 }

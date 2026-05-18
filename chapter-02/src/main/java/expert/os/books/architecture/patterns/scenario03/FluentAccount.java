@@ -1,6 +1,7 @@
 package expert.os.books.architecture.patterns.scenario03;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class FluentAccount {
 
@@ -27,12 +28,12 @@ public class FluentAccount {
         private BigDecimal balance = BigDecimal.ZERO;
 
         public BuildStep withNumber(String number) {
-            this.number = number;
+            this.number = Objects.requireNonNull(number, "number must not be null");
             return this;
         }
 
         public BankAccount withBalance(BigDecimal balance) {
-            this.balance = balance;
+            this.balance = Objects.requireNonNull(balance, "balance must not be null");
             return build();
         }
 

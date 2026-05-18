@@ -1,6 +1,7 @@
 package expert.os.books.architecture.patterns.scenario03;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class BankAccount {
 
@@ -27,5 +28,11 @@ public class BankAccount {
 
     static FluentAccount.BuildStep withNumber(String number) {
         return FluentAccount.account().withNumber(number);
+    }
+
+    public static BankAccount of(String accountNumber, BigDecimal balance) {
+        Objects.requireNonNull(accountNumber, "accountNumber must not be null");
+        Objects.requireNonNull(balance, "balance must not be null");
+        return new BankAccount(accountNumber, balance);
     }
 }

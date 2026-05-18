@@ -1,3 +1,5 @@
 package expert.os.books.architecture.patterns.scenario04;
 
-interface DataReader { String read(); }
+interface DataReader {
+    String read();
+}

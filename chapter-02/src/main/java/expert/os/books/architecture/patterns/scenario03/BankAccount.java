@@ -21,7 +21,7 @@ public class BankAccount {
     }
 
     //usage sample BankAccount account = BankAccount.builder().accountNumber("123456789").balance(new BigDecimal("1000.00")).build();
-    BankAccountBuilder builder() {
+    static BankAccountBuilder builder() {
         return new BankAccountBuilder();
     }
 }

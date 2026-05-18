@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.scenario05;
+package expert.os.books.architecture.patterns.scenario05.before;
 
 import java.math.BigDecimal;
 

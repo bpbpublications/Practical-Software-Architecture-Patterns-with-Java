@@ -1,11 +1,13 @@
 package expert.os.books.architecture.patterns.scenario03;
 
+import java.math.BigDecimal;
+
 public class BankAccount {
 
     private final String accountNumber;
-    private final double balance;
+    private final BigDecimal balance;
 
-    BankAccount(String accountNumber, double balance) {
+    BankAccount(String accountNumber, BigDecimal balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
@@ -14,7 +16,7 @@ public class BankAccount {
         return accountNumber;
     }
 
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 }

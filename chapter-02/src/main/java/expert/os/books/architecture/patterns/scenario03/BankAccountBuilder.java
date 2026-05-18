@@ -2,6 +2,7 @@ package expert.os.books.architecture.patterns.scenario03;
 
 import java.math.BigDecimal;
 
+
 public class BankAccountBuilder {
     private String accountNumber;
     private BigDecimal balance;

@@ -10,7 +10,6 @@ public class App {
             var service = container.select(AssistantService.class).get();
             String chat = service.chat("Hello, how are you?");
             System.out.println(chat);
-
         }
     }
 }

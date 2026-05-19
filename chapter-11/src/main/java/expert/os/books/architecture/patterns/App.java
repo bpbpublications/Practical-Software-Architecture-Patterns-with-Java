@@ -7,6 +7,9 @@ public class App {
 
     public static void main(String[] args) {
         try(SeContainer container = SeContainerInitializer.newInstance().initialize()) {
+            var service = container.select(AssistantService.class).get();
+            String chat = service.chat("Hello, how are you?");
+            System.out.println(chat);
 
         }
     }

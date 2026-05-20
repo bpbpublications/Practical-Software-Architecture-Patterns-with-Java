@@ -11,7 +11,7 @@ public class App {
             RequestContextController requestContextController = container.select(RequestContextController.class).get();
             requestContextController.activate();
             var service = container.select(AssistantService.class).get();
-            String chat = service.chat("How can I create a data structure to handle with my cards?");
+            String chat = service.chat("What is the capital of France?");
             System.out.println(chat);
             requestContextController.deactivate();
         }

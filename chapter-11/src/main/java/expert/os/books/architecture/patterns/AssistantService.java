@@ -8,6 +8,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public interface AssistantService {
 
-    @SystemMessage("You are a helpful assistant.")
+    @SystemMessage("""
+        You are a helpful software architecture assistant.
+        """)
     String chat(String userMessage);
 }

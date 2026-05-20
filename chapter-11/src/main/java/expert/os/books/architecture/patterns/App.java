@@ -11,8 +11,8 @@ public class App {
             RequestContextController requestContextController = container.select(RequestContextController.class).get();
             requestContextController.activate();
             var service = container.select(AssistantService.class).get();
-            String chat = service.chat("What is the capital of France?");
-            System.out.println(chat);
+            System.out.println("The city is: " + service.chat("What is the capital of France?"));
+            System.out.println("Who will win the next world cup: " + service.chat("Who will win the next FIFA's mens world cup ?"));
             requestContextController.deactivate();
         }
     }

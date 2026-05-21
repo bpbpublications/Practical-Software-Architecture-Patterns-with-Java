@@ -1,0 +1,1 @@
+package expert.os.books.architecture.patterns;

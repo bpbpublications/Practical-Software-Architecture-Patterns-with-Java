@@ -1,5 +1,68 @@
+Enterprise MCP Mock Server
 
+This repository contains a lightweight, Node.js-based Model Context Protocol (MCP) server. It uses the Server-Sent Events (SSE) transport layer to expose a mock fetch_logs tool, allowing you to test dynamic tool discovery and execution with LangChain4j.
+
+Prerequisites
+
+Before you begin, ensure you have the following installed on your machine:
+
+Docker: Download and install Docker Desktop
+
+Step-by-Step Execution Guide
+
+Follow these steps to build and run the MCP Server locally.
+
+Step 1: Navigate to the Project Directory
+
+Open your terminal (Command Prompt, PowerShell, or Terminal) and navigate to the folder where this project is located:
+
+cd path/to/mcp-mock-server
+
+
+(Ensure you are in the same directory as the Dockerfile and package.json)
+
+Step 2: Build the Docker Image
+
+Tell Docker to build an image based on the instructions in the Dockerfile. We will tag (name) this image mcp-mock-server so it's easy to reference later.
+
+Run the following command:
 
 docker build -t mcp-mock-server .
 
+
+Note: Do not forget the period (.) at the end of the command! It tells Docker to look in the current directory.
+
+Step 3: Run the Docker Container
+
+Once the image is built, spin it up into a running container. We need to map port 8080 from inside the container to port 8080 on your local machine so your Java application can reach it.
+
+Run the following command:
+
 docker run -p 8080:8080 mcp-mock-server
+
+
+Step 4: Verify the Server is Running
+
+If the container started successfully, you should see the following output in your terminal:
+
+> mcp-mock-server@1.0.0 start
+> node server.js
+
+✅ MCP Mock Server running on http://localhost:8080/sse
+
+
+Leave this terminal window open! The server is now actively listening for connections.
+
+Testing the Integration
+
+Now that your MCP Server is running, you can execute the McpMain.java class in your main Java project.
+
+As your Java application runs, watch this terminal window. You will see live logs confirming the connection and tool execution:
+
+[MCP Server] New Client Connected via SSE
+[MCP Server] Executing fetch_logs for: billing
+
+
+Stopping the Server
+
+To shut down the MCP server, simply click into the terminal window where Docker is running and press Ctrl + C (or Cmd + C on Mac).

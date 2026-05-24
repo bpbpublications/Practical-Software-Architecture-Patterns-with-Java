@@ -57,6 +57,12 @@
             <artifactId>langchain4j-open-ai</artifactId>
             <version>1.15.0</version>
         </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-mcp</artifactId>
+            <version>1.15.0-beta25</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>

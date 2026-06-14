@@ -15,12 +15,13 @@ import java.util.logging.Logger;
  */
 @Named("articleBean")
 @ViewScoped
-class ArticleBean implements Serializable {
+public class ArticleBean implements Serializable {
+
     private static final Logger LOGGER = Logger.getLogger(ArticleBean.class.getName());
 
     private PublishArticleUseCase publishUseCase;
 
-    private String inputArticleId;
+    private String articleId;
 
     ArticleBean() {
     }
@@ -31,15 +32,15 @@ class ArticleBean implements Serializable {
     }
 
     public void publish() {
-        LOGGER.info("\n[JSF Adapter] Admin clicked 'Publish' button for: " + inputArticleId);
-        publishUseCase.publishArticle(inputArticleId);
+        LOGGER.info("\n[JSF Adapter] Admin clicked 'Publish' button for: " + articleId);
+        publishUseCase.publishArticle(articleId);
     }
 
-    public String getInputArticleId() {
-        return inputArticleId;
+    public String getArticleId() {
+        return articleId;
     }
 
-    public void setInputArticleId(String inputArticleId) {
-        this.inputArticleId = inputArticleId;
+    public void setArticleId(String articleId) {
+        this.articleId = articleId;
     }
 }

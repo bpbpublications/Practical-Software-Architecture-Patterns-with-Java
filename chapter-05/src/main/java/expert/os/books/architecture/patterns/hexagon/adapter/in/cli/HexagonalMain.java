@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.hexagon.adapter.in;
+package expert.os.books.architecture.patterns.hexagon.adapter.in.cli;
 
 import expert.os.books.architecture.patterns.hexagon.core.Article;
 import expert.os.books.architecture.patterns.hexagon.port.in.PublishArticleUseCase;

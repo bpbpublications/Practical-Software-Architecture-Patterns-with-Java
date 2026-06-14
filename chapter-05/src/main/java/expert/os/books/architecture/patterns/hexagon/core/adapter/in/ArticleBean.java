@@ -15,22 +15,22 @@ import java.util.logging.Logger;
  */
 @Named("articleBean")
 @ViewScoped
-class ArticleBackingBean implements Serializable {
-    private static final Logger LOGGER = Logger.getLogger(ArticleBackingBean.class.getName());
+class ArticleBean implements Serializable {
+    private static final Logger LOGGER = Logger.getLogger(ArticleBean.class.getName());
 
     private PublishArticleUseCase publishUseCase;
+
     private String inputArticleId;
 
-    protected ArticleBackingBean() {
-    } // Required for proxy
+    ArticleBean() {
+    }
 
     @Inject
-    public ArticleBackingBean(PublishArticleUseCase publishUseCase) {
+    public ArticleBean(PublishArticleUseCase publishUseCase) {
         this.publishUseCase = publishUseCase;
     }
 
-    // Triggered by the <p:commandButton>
-    public void publishFromUI() {
+    public void publish() {
         LOGGER.info("\n[JSF Adapter] Admin clicked 'Publish' button for: " + inputArticleId);
         publishUseCase.publishArticle(inputArticleId);
     }

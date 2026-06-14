@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.hexagon.core.port.in;
+package expert.os.books.architecture.patterns.hexagon.port.in;
 
 
 import expert.os.books.architecture.patterns.hexagon.core.Article;

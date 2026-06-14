@@ -1,6 +1,6 @@
-package expert.os.books.architecture.patterns.hexagon.core.adapter.in;
+package expert.os.books.architecture.patterns.hexagon.adapter.in;
 
-import expert.os.books.architecture.patterns.hexagon.core.port.in.PublishArticleUseCase;
+import expert.os.books.architecture.patterns.hexagon.port.in.PublishArticleUseCase;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;

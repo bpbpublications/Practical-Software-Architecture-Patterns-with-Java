@@ -1,7 +1,7 @@
-package expert.os.books.architecture.patterns.hexagon.core.adapter.in;
+package expert.os.books.architecture.patterns.hexagon.adapter.in;
 
 import expert.os.books.architecture.patterns.hexagon.core.Article;
-import expert.os.books.architecture.patterns.hexagon.core.port.in.PublishArticleUseCase;
+import expert.os.books.architecture.patterns.hexagon.port.in.PublishArticleUseCase;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;

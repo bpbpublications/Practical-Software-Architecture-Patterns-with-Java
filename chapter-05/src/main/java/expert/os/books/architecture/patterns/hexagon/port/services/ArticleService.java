@@ -1,8 +1,8 @@
-package expert.os.books.architecture.patterns.hexagon.core.port.services;
+package expert.os.books.architecture.patterns.hexagon.port.services;
 
 import expert.os.books.architecture.patterns.hexagon.core.Article;
-import expert.os.books.architecture.patterns.hexagon.core.port.in.PublishArticleUseCase;
-import expert.os.books.architecture.patterns.hexagon.core.port.out.ArticleRepository;
+import expert.os.books.architecture.patterns.hexagon.port.in.PublishArticleUseCase;
+import expert.os.books.architecture.patterns.hexagon.port.out.ArticleRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

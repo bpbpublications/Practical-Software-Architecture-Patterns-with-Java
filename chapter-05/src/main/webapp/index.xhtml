@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="jakarta.faces.html"
+      xmlns:f="[http://xmlns.jcp.org/jsf/core](http://xmlns.jcp.org/jsf/core)"
       xmlns:p="primefaces">
 
 <h:head>
-    <title>Enterprise Task Manager</title>
+    <title>Article Publishing Dashboard</title>
 </h:head>
-
 <h:body style="background-color: #f8f9fa; padding: 2rem; font-family: Arial, sans-serif;">
+    <h:form id="publishForm">
+        <p:card style="width: 40rem; margin: 0 auto;">
+            <f:facet name="title">
+                <i class="pi pi-file-edit" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                Enterprise Publishing Dashboard
+            </f:facet>
+            <p:divider />
 
-    <h:form id="taskForm">
-        <p:card style="width: 50rem; margin: 0 auto;">
-        <p:panel header="Current To-Do List">
+            <div class="ui-fluid" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <p:inputText value="#{articleBean.articleId}"
+                             placeholder="Enter Article ID (e.g., ART-552)"
+                             style="flex-grow: 1;" />
 
-            <div class="ui-fluid" style="display: flex; gap: 10px; margin-bottom: 20px;">
-            <p:inputText value="#{taskBackingBean.newTask}" placeholder="Enter new task" />
-
-            <p:commandButton value="Add Task"
-                             action="#{taskBackingBean.addTask}"
-                             update="taskList @form" />
+                <p:commandButton value="Publish Article"
+                                 icon="pi pi-send"
+                                 action="#{articleBean.publish}"
+                                 styleClass="ui-button-success" />
             </div>
-
-            <p:dataTable id="taskList" value="#{taskBackingBean.tasks}" var="task">
-                <p:column headerText="Task Name">
-                    <i class="pi pi-check-circle" style="color: #28a745; margin-right: 8px;"></i>
-                    <h:outputText value="#{task}" />
-                </p:column>
-            </p:dataTable>
-
-        </p:panel>
         </p:card>
     </h:form>
 </h:body>

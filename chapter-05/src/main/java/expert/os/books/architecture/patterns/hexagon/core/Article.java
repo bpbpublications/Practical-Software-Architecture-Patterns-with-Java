@@ -31,4 +31,14 @@ public class Article {
     public String getTitle() {
         return title;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", isPublished=" + isPublished +
+                '}';
+    }
 }

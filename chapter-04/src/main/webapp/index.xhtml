@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="primefaces">
+
+<h:head>
+    <title>Hello PrimeFaces</title>
+</h:head>
+
+<h:body>
+
+    <p:card>
+        <h:outputText value="#{helloController.message}" />
+    </p:card>
+
+    <h:form id="form">
+
+        <p:inputText value="#{helloController.name}">
+            <p:ajax event="keyup" update="message"/>
+        </p:inputText>
+
+        <h:outputText id="message" value="#{helloController.message}" />
+
+    </h:form>
+</h:body>
+</html>

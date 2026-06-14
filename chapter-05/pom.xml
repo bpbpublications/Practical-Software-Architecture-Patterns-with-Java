@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>expert.os.books.architecture.patterns</groupId>
+    <artifactId>chapter-05</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
+
+    <name>chapter-05</name>
+  
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.report.sourceEncoding>UTF-8</project.report.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+        <jakartaee-api.version>11.0.0</jakartaee-api.version>
+        <compiler-plugin.version>3.15.0</compiler-plugin.version>
+        <war-plugin.version>3.5.1</war-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-shaded</artifactId>
+            <version>6.0.4.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>${jakartaee-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>15.0.16</version>
+            <classifier>jakarta</classifier>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>chapter-04</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${war-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish.embedded</groupId>
+                <artifactId>embedded-glassfish-maven-plugin</artifactId>
+                <version>8.0</version>
+                <configuration>
+                    <app>target/chapter-04.war</app>
+                    <glassfish.version>8.0.3</glassfish.version>
+                    <contextRoot>/</contextRoot>
+                    <port>8080</port>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

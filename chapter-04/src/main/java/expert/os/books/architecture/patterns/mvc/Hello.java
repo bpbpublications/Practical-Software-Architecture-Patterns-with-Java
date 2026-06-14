@@ -1,4 +1,4 @@
-package org.eclipse.jakarta.hello;
+package expert.os.books.architecture.patterns.mvc;
 
 public class Hello {
 

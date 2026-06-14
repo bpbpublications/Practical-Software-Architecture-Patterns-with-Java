@@ -1,4 +1,4 @@
-package org.eclipse.jakarta.hello;
+package expert.os.books.architecture.patterns.mvc;
 
 import jakarta.ws.rs.core.Application;
 import jakarta.ws.rs.ApplicationPath;

@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.hexagon.adapter.in;
+package expert.os.books.architecture.patterns.hexagon.adapter.in.ui;
 
 import expert.os.books.architecture.patterns.hexagon.port.in.PublishArticleUseCase;
 import jakarta.faces.view.ViewScoped;

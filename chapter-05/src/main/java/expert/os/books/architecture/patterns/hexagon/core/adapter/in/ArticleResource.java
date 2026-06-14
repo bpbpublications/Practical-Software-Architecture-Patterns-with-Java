@@ -39,6 +39,6 @@ public class ArticleResource {
     @POST
     public Article handlePostRequest(@PathParam("pathId") String pathId) {
         LOGGER.info("[REST Adapter] Received HTTP POST to /articles/" + pathId + "/publish");
-        publishUseCase.publishArticle(pathId);
+        return publishUseCase.publishArticle(pathId);
     }
 }

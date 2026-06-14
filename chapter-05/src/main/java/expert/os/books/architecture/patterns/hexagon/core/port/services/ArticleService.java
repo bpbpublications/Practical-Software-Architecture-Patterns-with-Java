@@ -21,7 +21,7 @@ class ArticleService implements PublishArticleUseCase {
     }
 
     @Override
-    public void publishArticle(String articleId) {
+    public Article publishArticle(String articleId) {
         LOGGER.info("[Domain] Executing Publish Use Case for: " + articleId);
 
         Article article = repository.findById(articleId);
@@ -34,5 +34,6 @@ class ArticleService implements PublishArticleUseCase {
 
         repository.save(article);
         LOGGER.info("[Domain] Article successfully published.");
+        return article;
     }
 }

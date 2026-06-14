@@ -1,5 +1,6 @@
 package expert.os.books.architecture.patterns.mvc.cli;
 
+import expert.os.books.architecture.patterns.mvc.TaskModel;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.List;

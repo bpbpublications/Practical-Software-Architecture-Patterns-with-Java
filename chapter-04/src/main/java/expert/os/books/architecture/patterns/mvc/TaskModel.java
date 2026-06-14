@@ -1,9 +1,6 @@
-package expert.os.books.architecture.patterns.mvc.cli;
+package expert.os.books.architecture.patterns.mvc;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import jakarta.enterprise.inject.se.SeContainer;
-import jakarta.enterprise.inject.se.SeContainerInitializer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +15,7 @@ import java.util.List;
  * ARCHITECTURAL RULE: The Model MUST NOT depend on the Controller or the View.
  */
 @ApplicationScoped
-class TaskModel {
+public class TaskModel {
     private final List<String> tasks = new ArrayList<>();
 
     public void addTask(String task) {

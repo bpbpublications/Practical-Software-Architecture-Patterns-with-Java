@@ -41,7 +41,7 @@
     </dependencies>
 
     <build>
-        <finalName>chapter-04</finalName>
+        <finalName>chapter-05</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -58,7 +58,7 @@
                 <artifactId>embedded-glassfish-maven-plugin</artifactId>
                 <version>8.0</version>
                 <configuration>
-                    <app>target/chapter-04.war</app>
+                    <app>target/chapter-05.war</app>
                     <glassfish.version>8.0.3</glassfish.version>
                     <contextRoot>/</contextRoot>
                     <port>8080</port>

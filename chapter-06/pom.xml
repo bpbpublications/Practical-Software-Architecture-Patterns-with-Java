@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>expert.os.books.architecture.patterns</groupId>
-    <artifactId>chapter-05</artifactId>
+    <artifactId>chapter-06</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
-    <name>chapter-05</name>
+    <name>chapter-06</name>
   
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

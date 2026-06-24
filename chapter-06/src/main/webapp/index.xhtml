@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="[http://xmlns.jcp.org/jsf/core](http://xmlns.jcp.org/jsf/core)"
+      xmlns:p="primefaces">
+
+<h:head>
+    <title>Article Publishing Dashboard</title>
+</h:head>
+<h:body style="background-color: #f8f9fa; padding: 2rem; font-family: Arial, sans-serif;">
+    <h:form id="publishForm">
+        <p:card style="width: 40rem; margin: 0 auto;">
+            <f:facet name="title">
+                <i class="pi pi-file-edit" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                Enterprise Publishing Dashboard
+            </f:facet>
+            <p:divider />
+
+            <div class="ui-fluid" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <p:inputText value="#{articleBean.articleId}"
+                             placeholder="Enter Article ID (e.g., ART-552)"
+                             style="flex-grow: 1;" />
+
+                <p:commandButton value="Publish Article"
+                                 icon="pi pi-send"
+                                 action="#{articleBean.publish}"
+                                 styleClass="ui-button-success" />
+            </div>
+        </p:card>
+    </h:form>
+</h:body>
+</html>

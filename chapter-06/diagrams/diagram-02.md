@@ -1,7 +1,7 @@
 ```mermaid
 flowchart LR
-    Client([Data / AI Client]) -->|1. SEARCH /orders<br>+ Complex JSON Body| API[REST Controller Adapter]
-    API -->|2. searchOrders| Domain[[Core Domain]]
+    Client([Data / AI Client]) -->|1. QUERY /orders<br>+ Complex JSON Body| API[REST Controller Adapter]
+    API -->|2. queryOrders| Domain[[Core Domain]]
     Domain -.->|3. Filtered Results| API
     API -.->|4. HTTP 200 OK JSON| Client
 

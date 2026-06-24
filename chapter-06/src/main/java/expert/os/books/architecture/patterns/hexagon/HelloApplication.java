@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.hexagon.adapter.in.web;
+package expert.os.books.architecture.patterns.hexagon;
 
 import jakarta.ws.rs.core.Application;
 import jakarta.ws.rs.ApplicationPath;

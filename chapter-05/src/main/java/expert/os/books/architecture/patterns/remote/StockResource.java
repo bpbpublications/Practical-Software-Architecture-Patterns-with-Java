@@ -16,7 +16,7 @@ import java.util.List;
 @ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-class StockRestController {
+class StockResource {
 
     @Inject
     private StockService stockService;
@@ -37,7 +37,7 @@ class StockRestController {
 
     @QUERY
     public Response queryStocks(StockQueryDto query) {
-        List<String> results = stockService.queryStocks(query.minPrice, query.maxPrice, query.sector);
+        List<String> results = stockService.queryStocks(query.minPrice(), query.maxPrice(), query.sector());
         String jsonPayload = "{\"results\": [\"" + String.join("\", \"", results) + "\"]}";
         return Response.ok(jsonPayload).build();
     }

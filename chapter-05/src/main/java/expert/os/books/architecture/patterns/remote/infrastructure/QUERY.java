@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.remote;
+package expert.os.books.architecture.patterns.remote.infrastructure;
 
 import jakarta.ws.rs.HttpMethod;
 

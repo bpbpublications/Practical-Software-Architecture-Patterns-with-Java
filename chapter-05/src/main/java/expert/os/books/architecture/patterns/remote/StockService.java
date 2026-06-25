@@ -4,9 +4,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.List;
 
-// ============================================================================
-// 1. THE SHARED SERVICE (Simple Layered Approach)
-// ============================================================================
 
 @ApplicationScoped
 public class StockService {

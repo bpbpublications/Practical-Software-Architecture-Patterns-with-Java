@@ -34,11 +34,10 @@ public class StockRepository {
 
     public List<Stock> find(List<String> sectors, BigDecimal minPrice, BigDecimal maxPrice) {
         LOGGER.info("Finding stocks with sectors: " + sectors + ", minPrice: " + minPrice + ", maxPrice: " + maxPrice);
-        Predicate<Stock> minPricePredicate = stock -> stock.getPrice().compareTo(minPrice) >= 0;
-        Predicate<Stock> maxPricePredicate = stock -> stock.getPrice().compareTo(maxPrice) <= 0;
-        Predicate<Stock> isSticker = stock -> sectors.isEmpty() || sectors.contains(stock.getSticker());
-        return stocks.values().stream()
-                .filter(minPricePredicate.and(maxPricePredicate).and(isSticker))
-                .toList();
+        Predicate<Stock> minPricePredicate = stock -> minPrice == null || stock.getPrice().compareTo(minPrice) >= 0;
+        Predicate<Stock> maxPricePredicate = stock -> minPrice == null || stock.getPrice().compareTo(maxPrice) <= 0;
+        var isSectorEmpty = sectors == null || sectors.isEmpty();
+        Predicate<Stock> isSticker = stock -> isSectorEmpty || sectors.contains(stock.getSticker());
+        return stocks.values().stream().filter(minPricePredicate.and(maxPricePredicate).and(isSticker)).toList();
     }
 }

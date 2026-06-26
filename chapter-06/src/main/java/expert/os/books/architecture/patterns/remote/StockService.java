@@ -15,7 +15,7 @@ public class StockService {
         throw new IllegalArgumentException("Unknown Ticker Symbol: " + tickerSymbol);
     }
 
-    public List<String> queryStocks(double minPrice, double maxPrice, String sector) {
+    public List<String> queryStocks(BigDecimal minPrice, BigDecimal maxPrice, String sector) {
         return List.of("AAPL", "MSFT");
     }
 }

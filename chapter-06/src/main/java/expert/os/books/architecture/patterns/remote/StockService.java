@@ -40,6 +40,7 @@ public class StockService {
 
     public List<String> queryStocks(BigDecimal minPrice, BigDecimal maxPrice, String sector) {
         LOGGER.info("Querying stocks with minPrice: " + minPrice + ", maxPrice: " + maxPrice + ", sector: " + sector);
+
         return List.of("AAPL", "MSFT");
     }
 }

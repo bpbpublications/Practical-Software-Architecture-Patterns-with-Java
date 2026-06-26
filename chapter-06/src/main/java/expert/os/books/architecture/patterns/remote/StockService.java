@@ -1,5 +1,6 @@
 package expert.os.books.architecture.patterns.remote;
 
+import expert.os.books.architecture.patterns.remote.controller.Stocks;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -38,9 +39,9 @@ public class StockService {
         throw new IllegalArgumentException("Unknown Ticker Symbol: " + tickerSymbol);
     }
 
-    public List<String> search(BigDecimal minPrice, BigDecimal maxPrice, String sector) {
-        LOGGER.info("Querying stocks with minPrice: " + minPrice + ", maxPrice: " + maxPrice + ", sector: " + sector);
-
+    public List<String> search(BigDecimal minPrice, BigDecimal maxPrice, List<String> sectors) {
+        LOGGER.info("Querying stocks with minPrice: " + minPrice + ", maxPrice: " + maxPrice + ", sectors: " + sectors);
+        List<Stock> stocks = stockRepository.find(sectors, minPrice, maxPrice);
         return List.of("AAPL", "MSFT");
     }
 

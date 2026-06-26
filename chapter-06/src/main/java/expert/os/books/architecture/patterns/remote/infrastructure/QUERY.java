@@ -10,5 +10,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @HttpMethod("QUERY")
-public @interface QUERY { }
+public @interface QUERY {
+
+}
 

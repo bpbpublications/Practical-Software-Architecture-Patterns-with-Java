@@ -8,6 +8,7 @@ import java.util.List;
 
 @ApplicationScoped
 public class StockService {
+
     public BigDecimal getCurrentPrice(String tickerSymbol) {
         if (tickerSymbol.equalsIgnoreCase("AAPL")){
             return BigDecimal.valueOf(150.25);

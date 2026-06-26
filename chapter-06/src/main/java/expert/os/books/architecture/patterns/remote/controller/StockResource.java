@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 @ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-class StockResource {
+public class StockResource {
 
     private static final Logger LOGGER = Logger.getLogger(StockResource.class.getName());
 

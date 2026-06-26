@@ -2,13 +2,16 @@ package expert.os.books.architecture.patterns.remote;
 
 import jakarta.enterprise.context.ApplicationScoped;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 
 @ApplicationScoped
 public class StockService {
-    public double getCurrentPrice(String tickerSymbol) {
-        if (tickerSymbol.equalsIgnoreCase("AAPL")) return 150.25;
+    public BigDecimal getCurrentPrice(String tickerSymbol) {
+        if (tickerSymbol.equalsIgnoreCase("AAPL")){
+            return BigDecimal.valueOf(150.25);
+        }
         throw new IllegalArgumentException("Unknown Ticker Symbol: " + tickerSymbol);
     }
 

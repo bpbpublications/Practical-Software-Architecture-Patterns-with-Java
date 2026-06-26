@@ -8,6 +8,7 @@ import jakarta.inject.Inject;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 
 @ApplicationScoped
@@ -20,6 +21,10 @@ public class StockService {
     @Inject
     public StockService(StockRepository stockRepository) {
         this.stockRepository = stockRepository;
+    }
+
+    StockService() {
+        this.stockRepository = null;
     }
 
     @PostConstruct
@@ -42,7 +47,7 @@ public class StockService {
     public List<String> search(BigDecimal minPrice, BigDecimal maxPrice, List<String> sectors) {
         LOGGER.info("Querying stocks with minPrice: " + minPrice + ", maxPrice: " + maxPrice + ", sectors: " + sectors);
         List<Stock> stocks = stockRepository.find(sectors, minPrice, maxPrice);
-        return List.of("AAPL", "MSFT");
+        return stocks.stream().map(Stock::getSticker).toList();
     }
 
     public void update(String tickerSymbol, BigDecimal newPrice) {

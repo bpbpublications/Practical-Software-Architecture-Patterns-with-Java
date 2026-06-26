@@ -31,9 +31,10 @@ class StockResource {
     @Path("/{ticker}")
     public Response getStockPrice(@PathParam("ticker") String ticker) {
         try {
-            double price = stockService.getCurrentPrice(ticker);
-            String jsonPayload = String.format("{\"ticker\": \"%s\", \"price\": %.2f}", ticker, price);
-            return Response.ok(jsonPayload).build();
+            var price = stockService.getCurrentPrice(ticker);
+            LOGGER.info("Retrieved price for ticker: " + ticker);
+            LOGGER.info("Constructed JSON payload for ticker: " + ticker);
+            return Response.ok(new StockResult(ticker, price)).build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("{\"error\": \"" + e.getMessage() + "\"}")

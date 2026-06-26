@@ -44,7 +44,7 @@ public class StockResource {
     @QUERY
     public Response queryStocks(StockQueryDto query) {
         LOGGER.info("Constructed JSON payload for query: " + query);
-        List<String> results = stockService.queryStocks(query.minPrice(), query.maxPrice(), query.sector());
+        List<String> results = stockService.search(query.minPrice(), query.maxPrice(), query.sector());
         return Response.ok(new Stocks(results)).build();
     }
 }

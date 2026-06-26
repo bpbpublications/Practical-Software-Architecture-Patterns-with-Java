@@ -43,4 +43,24 @@ public class StockService {
 
         return List.of("AAPL", "MSFT");
     }
+
+    public void update(String tickerSymbol, BigDecimal newPrice) {
+        LOGGER.info("Updating stock price for ticker symbol: " + tickerSymbol + " to new price: " + newPrice);
+        var stockOptional = stockRepository.findById(tickerSymbol);
+        if (stockOptional.isPresent()) {
+            Stock stock = stockOptional.get();
+            stock.update(newPrice);
+            stockRepository.save(stock);
+            LOGGER.info("Stock price updated successfully.");
+        } else {
+            throw new IllegalArgumentException("Unknown Ticker Symbol: " + tickerSymbol);
+        }
+    }
+
+    public void delete(String tickerSymbol) {
+        LOGGER.info("Deleting stock with ticker symbol: " + tickerSymbol);
+        stockRepository.delete(tickerSymbol);
+    }
+
+
 }

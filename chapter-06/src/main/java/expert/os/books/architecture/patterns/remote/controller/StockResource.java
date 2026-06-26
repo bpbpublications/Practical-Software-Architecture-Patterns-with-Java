@@ -14,12 +14,15 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @Path("/api/v1/stocks")
 @ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 class StockResource {
+
+    private static final Logger LOGGER = Logger.getLogger(StockResource.class.getName());
 
     @Inject
     private StockService stockService;

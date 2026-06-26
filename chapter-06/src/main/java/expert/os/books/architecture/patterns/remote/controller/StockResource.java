@@ -2,10 +2,12 @@ package expert.os.books.architecture.patterns.remote.controller;
 
 import expert.os.books.architecture.patterns.remote.infrastructure.QUERY;
 import expert.os.books.architecture.patterns.remote.StockService;
+import jakarta.data.repository.Delete;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
@@ -34,6 +36,28 @@ public class StockResource {
             LOGGER.info("Retrieved price for ticker: " + ticker);
             LOGGER.info("Constructed JSON payload for ticker: " + ticker);
             return Response.ok(new StockResult(ticker, price)).build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("{\"error\": \"" + e.getMessage() + "\"}")
+                    .build();
+        }
+    }
+
+    @Delete
+    @Path("/{ticker}")
+    public Response deleteStock(@PathParam("ticker") String ticker) {
+            stockService.delete(ticker);
+            LOGGER.info("Deleted stock with ticker: " + ticker);
+            return Response.noContent().build();
+    }
+
+    @PUT
+    @Path("/{ticker}")
+    public Response updateStockPrice(@PathParam("ticker") String ticker, StockUpdateDto update){
+        try {
+            stockService.update(ticker, update.price());
+            LOGGER.info("Updated price for ticker: " + ticker + " to " + update.price());
+            return Response.noContent().build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.NOT_FOUND)
                     .entity("{\"error\": \"" + e.getMessage() + "\"}")

@@ -39,7 +39,7 @@ public class StockWebSocket {
 
     private void pushPriceUpdate(Session session, String ticker) {
         try {
-            double price = stockService.getCurrentPrice(ticker);
+            var price = stockService.getCurrentPrice(ticker);
             String message = String.format("LIVE UPDATE | %s: $%.2f", ticker, price);
             session.getBasicRemote().sendText(message);
             LOGGER.info("Pushed price update to WebSocket: " + message);

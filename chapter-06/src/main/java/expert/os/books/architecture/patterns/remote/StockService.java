@@ -57,6 +57,12 @@ public class StockService {
         }
     }
 
+    public void insert(String tickerSymbol, BigDecimal price) {
+        LOGGER.info("Inserting new stock with ticker symbol: " + tickerSymbol + " and price: " + price);
+        var stock = new Stock(tickerSymbol, price);
+        stockRepository.save(stock);
+    }
+
     public void delete(String tickerSymbol) {
         LOGGER.info("Deleting stock with ticker symbol: " + tickerSymbol);
         stockRepository.delete(tickerSymbol);

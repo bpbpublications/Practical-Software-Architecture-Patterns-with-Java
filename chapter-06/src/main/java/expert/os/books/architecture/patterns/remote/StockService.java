@@ -1,6 +1,8 @@
 package expert.os.books.architecture.patterns.remote;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -11,6 +13,22 @@ import java.util.logging.Logger;
 public class StockService {
 
     private static final Logger LOGGER = Logger.getLogger(StockService.class.getName());
+
+    private final StockRepository stockRepository;
+
+    @Inject
+    public StockService(StockRepository stockRepository) {
+        this.stockRepository = stockRepository;
+    }
+
+    @PostConstruct
+    void load() {
+        LOGGER.info("Loading initial stock data...");
+        stockRepository.save(new Stock("AAPL", BigDecimal.valueOf(150.25)));
+        stockRepository.save(new Stock("MSFT", BigDecimal.valueOf(300.50)));
+        stockRepository.save(new Stock("GOOGL", BigDecimal.valueOf(2500.00)));
+        LOGGER.info("Initial stock data loaded.");
+    }
 
     public BigDecimal getCurrentPrice(String tickerSymbol) {
         LOGGER.info("Getting current price for ticker symbol: " + tickerSymbol);

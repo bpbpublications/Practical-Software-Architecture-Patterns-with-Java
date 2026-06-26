@@ -32,7 +32,6 @@ public class StockWebSocket {
 
     @OnOpen
     public void onOpen(Session session, @PathParam("ticker") String ticker) {
-        System.out.println("WebSocket Connection Opened: " + session.getId());
         LOGGER.info("WebSocket Connection Opened: " + session.getId());
         pushPriceUpdate(session, ticker);
     }

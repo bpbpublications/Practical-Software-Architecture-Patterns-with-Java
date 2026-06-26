@@ -20,9 +20,12 @@ import jakarta.websocket.server.PathParam;
 import jakarta.websocket.server.ServerEndpoint;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 @ServerEndpoint("/ws/stocks/{ticker}")
 public class StockWebSocket {
+
+    private static final Logger LOGGER = Logger.getLogger(StockWebSocket.class.getName());
 
     @Inject
     private StockService stockService;
@@ -30,6 +33,7 @@ public class StockWebSocket {
     @OnOpen
     public void onOpen(Session session, @PathParam("ticker") String ticker) {
         System.out.println("WebSocket Connection Opened: " + session.getId());
+        LOGGER.info("WebSocket Connection Opened: " + session.getId());
         pushPriceUpdate(session, ticker);
     }
 
@@ -37,8 +41,8 @@ public class StockWebSocket {
         try {
             double price = stockService.getCurrentPrice(ticker);
             String message = String.format("LIVE UPDATE | %s: $%.2f", ticker, price);
-
             session.getBasicRemote().sendText(message);
+            LOGGER.info("Pushed price update to WebSocket: " + message);
         } catch (IOException | IllegalArgumentException exception) {
             System.err.println("Failed to push to WebSocket: " + exception.getMessage());
         }
@@ -46,6 +50,6 @@ public class StockWebSocket {
 
     @OnClose
     public void onClose(Session session) {
-        System.out.println("WebSocket Connection Closed: " + session.getId());
+        LOGGER.info("WebSocket Connection Closed: " + session.getId());
     }
 }

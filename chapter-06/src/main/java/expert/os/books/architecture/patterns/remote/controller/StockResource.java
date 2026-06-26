@@ -1,7 +1,6 @@
 package expert.os.books.architecture.patterns.remote.controller;
 
 import expert.os.books.architecture.patterns.remote.infrastructure.QUERY;
-import expert.os.books.architecture.patterns.remote.StockQueryDto;
 import expert.os.books.architecture.patterns.remote.StockService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

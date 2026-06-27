@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>expert.os.books.architecture.patterns</groupId>
-    <artifactId>chapter-06</artifactId>
+    <artifactId>chapter-07</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
-    <name>chapter-06</name>
+    <name>chapter-07</name>
   
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,7 +41,7 @@
     </dependencies>
 
     <build>
-        <finalName>chapter-06</finalName>
+        <finalName>chapter-07</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -58,7 +58,7 @@
                 <artifactId>embedded-glassfish-maven-plugin</artifactId>
                 <version>8.0</version>
                 <configuration>
-                    <app>target/chapter-06.war</app>
+                    <app>target/chapter-07.war</app>
                     <glassfish.version>8.0.3</glassfish.version>
                     <contextRoot>/</contextRoot>
                     <port>8080</port>

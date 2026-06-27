@@ -1,0 +1,74 @@
+package expert.os.books.architecture.patterns.remote.controller;
+
+import expert.os.books.architecture.patterns.remote.infrastructure.QUERY;
+import expert.os.books.architecture.patterns.remote.StockService;
+import jakarta.data.repository.Delete;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.PUT;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
+import java.util.List;
+import java.util.logging.Logger;
+
+@Path("/api/v1/stocks")
+@ApplicationScoped
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
+public class StockResource {
+
+    private static final Logger LOGGER = Logger.getLogger(StockResource.class.getName());
+
+    @Inject
+    private StockService stockService;
+
+    @GET
+    @Path("/{ticker}")
+    public Response getStockPrice(@PathParam("ticker") String ticker) {
+        try {
+            var price = stockService.getCurrentPrice(ticker);
+            LOGGER.info("Retrieved price for ticker: " + ticker);
+            LOGGER.info("Constructed JSON payload for ticker: " + ticker);
+            return Response.ok(new StockResult(ticker, price)).build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("{\"error\": \"" + e.getMessage() + "\"}")
+                    .build();
+        }
+    }
+
+    @Delete
+    @Path("/{ticker}")
+    public Response deleteStock(@PathParam("ticker") String ticker) {
+            stockService.delete(ticker);
+            LOGGER.info("Deleted stock with ticker: " + ticker);
+            return Response.noContent().build();
+    }
+
+    @PUT
+    @Path("/{ticker}")
+    public Response updateStockPrice(@PathParam("ticker") String ticker, StockUpdateDto update){
+        try {
+            stockService.update(ticker, update.price());
+            LOGGER.info("Updated price for ticker: " + ticker + " to " + update.price());
+            return Response.noContent().build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("{\"error\": \"" + e.getMessage() + "\"}")
+                    .build();
+        }
+    }
+
+    @QUERY
+    public Response queryStocks(StockQueryDto query) {
+        LOGGER.info("Constructed JSON payload for query: " + query);
+        List<String> results = stockService.search(query.minPrice(), query.maxPrice(), query.sectors());
+        return Response.ok(new Stocks(results)).build();
+    }
+}

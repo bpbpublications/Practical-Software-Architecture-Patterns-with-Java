@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Live Stock Dashboard</title>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        let socket;
+
+        function connectWebSocket() {
+            const input = document.getElementById("tickerForm:tickerInput");
+
+            if (!input) {
+                console.error("tickerInput not found");
+                return;
+            }
+
+            const ticker = input.value.trim();
+
+            if (!ticker) {
+                console.warn("Ticker is empty");
+                return;
+            }
+
+            if (socket !== undefined && socket.readyState !== WebSocket.CLOSED) {
+                socket.close();
+            }
+
+            const protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+            const contextPath = "#{request.contextPath}";
+
+            const wsUrl = protocol
+                + window.location.host
+                + contextPath
+                + "/ws/stocks/"
+                + encodeURIComponent(ticker);
+
+            console.log("Connecting to WebSocket:", wsUrl);
+
+            socket = new WebSocket(wsUrl);
+
+            socket.onopen = function () {
+                const display = document.getElementById("liveDataDisplay");
+                display.innerHTML =
+                    "<p style='color: lightgreen;'><i>Connected to "
+                    + ticker
+                    + " live stream...</i></p>";
+            };
+
+            socket.onmessage = function (event) {
+                const display = document.getElementById("liveDataDisplay");
+
+                display.innerHTML =
+                    "<p><b>"
+                    + new Date().toLocaleTimeString()
+                    + ":</b> "
+                    + event.data
+                    + "</p>"
+                    + display.innerHTML;
+            };
+
+            socket.onerror = function (event) {
+                console.error("WebSocket error:", event);
+
+                const display = document.getElementById("liveDataDisplay");
+                display.innerHTML =
+                    "<p style='color: red;'>WebSocket error. Check browser console and server logs.</p>"
+                    + display.innerHTML;
+            };
+
+            socket.onclose = function (event) {
+                console.warn("WebSocket closed:", event.code, event.reason);
+
+                const display = document.getElementById("liveDataDisplay");
+                display.innerHTML =
+                    "<p style='color: orange;'>WebSocket connection closed.</p>"
+                    + display.innerHTML;
+            };
+        }
+        //]]>
+    </script>
+</h:head>
+
+<h:body style="font-family: Arial, sans-serif; background-color: #f8f9fa; padding: 2rem;">
+
+    <h:form id="tickerForm">
+        <p:card style="width: 40rem; margin: 0 auto;">
+            <h2>
+                <i class="pi pi-chart-line" style="margin-right: 10px;"></i>
+                Real-Time Stock Dashboard
+            </h2>
+
+            <p:divider />
+
+            <div class="ui-fluid" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <p:inputText id="tickerInput"
+                             placeholder="Enter Ticker, for example AAPL"
+                             style="flex-grow: 1;" />
+
+                <p:commandButton value="Connect Stream"
+                                 type="button"
+                                 icon="pi pi-bolt"
+                                 onclick="connectWebSocket(); return false;"
+                                 styleClass="ui-button-warning" />
+            </div>
+
+            <div id="liveDataDisplay"
+                 style="height: 200px;
+                        overflow-y: auto;
+                        background: #2b2b2b;
+                        color: #a9b7c6;
+                        padding: 15px;
+                        border-radius: 5px;
+                        font-family: monospace;">
+                <p style="color: #808080;">Awaiting connection...</p>
+            </div>
+        </p:card>
+    </h:form>
+
+</h:body>
+</html>

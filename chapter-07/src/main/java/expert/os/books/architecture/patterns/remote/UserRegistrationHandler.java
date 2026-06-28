@@ -24,7 +24,7 @@ class UserRegistrationHandler {
         LOGGER.info("[WRITE MODEL] Business rules processed successfully for user: " + newUserId);
 
         LOGGER.info("[EVENT BUS] Firing CDI Event...");
-        cdiEventPublisher.fire(fact);
+        cdiEventPublisher.fireAsync(fact);
 
         return newUserId;
     }

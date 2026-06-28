@@ -4,6 +4,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
@@ -12,9 +13,9 @@ public class UserDashboardRepository {
 
     private static final Logger LOGGER = Logger.getLogger(UserDashboardRepository.class.getName());
 
-    private final Map<String, UserDashboard> data = new ConcurrentHashMap<>();
+    private final Map<UUID, UserDashboard> data = new ConcurrentHashMap<>();
 
-    public Optional<UserDashboard> findDashboard(String userId) {
+    public Optional<UserDashboard> findDashboard(UUID userId) {
         LOGGER.info("[READ MODEL] Performing sub-millisecond read from NoSQL database...");
         return Optional.ofNullable(data.get(userId));
     }

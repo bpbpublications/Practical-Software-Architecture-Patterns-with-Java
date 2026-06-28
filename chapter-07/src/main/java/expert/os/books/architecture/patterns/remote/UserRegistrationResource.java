@@ -23,13 +23,8 @@ class UserRegistrationResource {
         try {
             String newUserId = registrationHandler.handle(request);
 
-            // CRITICAL ARCHITECTURE NOTE:
-            // We return 202 ACCEPTED (not 200 OK or 201 Created).
-            // In an EDA/CQRS system, returning 202 tells the client "We received
-            // your request and are processing it asynchronously, but the read
-            // model might not be immediately updated."
             String responseJson = String.format("{\"message\": \"Processing\", \"userId\": \"%s\"}", newUserId);
-            return Response.accepted(responseJson).build();
+            return Response.accepted(new UserResponse(newUserId, "Processing")).build();
 
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();

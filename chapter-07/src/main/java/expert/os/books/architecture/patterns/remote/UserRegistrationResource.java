@@ -14,7 +14,7 @@ import jakarta.ws.rs.core.Response;
 class UserRegistrationResource {
 
     @Inject
-    private UserRegistrationHandler registrationHandler;
+    private UserService registrationHandler;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

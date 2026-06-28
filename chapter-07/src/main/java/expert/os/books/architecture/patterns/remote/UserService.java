@@ -13,19 +13,25 @@ class UserService {
     private static final Logger LOGGER = Logger.getLogger(UserService.class.getName());
 
     @Inject
+    private UserRepository userRepository;
+
+    @Inject
     private Event<UserRegisteredEvent> cdiEventPublisher; // Native Jakarta EE Event Bus
 
-    public UUID handle(RegisterUser request) {
+    public UserCreatedResponse handle(RegisterUser request) {
 
         UUID newUserId = UUID.randomUUID();
 
         UserRegisteredEvent fact = new UserRegisteredEvent(newUserId, request.name(), request.email());
+        String randomPassword = UUID.randomUUID().toString().substring(0, 8);
 
+        var user = new User(newUserId, request.name(), request.email(), randomPassword);
+        userRepository.save(user);
         LOGGER.info("[WRITE MODEL] Business rules processed successfully for user: " + newUserId);
 
         LOGGER.info("[EVENT BUS] Firing CDI Event...");
         cdiEventPublisher.fireAsync(fact);
 
-        return newUserId;
+        return new UserCreatedResponse(newUserId, request.name(), request.email(), randomPassword);
     }
 }

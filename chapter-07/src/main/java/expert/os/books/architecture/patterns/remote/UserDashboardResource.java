@@ -21,7 +21,7 @@ class UserDashboardResource {
     @Path("/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDashboard(@PathParam("userId") String userId) {
-        UserDashboard view = dashboardRepository.findDashboard(userId)
+        var view = dashboardRepository.findDashboard(userId)
                 .orElseThrow(() -> new WebApplicationException("User not found: " + userId, Response.Status.NOT_FOUND));
 
         return Response.ok(view).build();

@@ -1,6 +1,6 @@
 package expert.os.books.architecture.patterns.remote.resources;
 
-import expert.os.books.architecture.patterns.remote.UserDashboardRepository;
+import expert.os.books.architecture.patterns.remote.UserDashboardService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -18,13 +18,13 @@ import java.util.UUID;
 class UserDashboardResource {
 
     @Inject
-    private UserDashboardRepository dashboardRepository;
+    private UserDashboardService userDashboardService;
 
     @GET
     @Path("/{userId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getDashboard(@PathParam("userId") UUID userId) {
-        var view = dashboardRepository.findDashboard(userId)
+        var view = userDashboardService.findDashboard(userId)
                 .orElseThrow(() -> new WebApplicationException("User not found: " + userId, Response.Status.NOT_FOUND));
 
         return Response.ok(view).build();

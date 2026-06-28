@@ -9,7 +9,7 @@ import java.util.UUID;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-class UserService {
+public class UserService {
 
     private static final Logger LOGGER = Logger.getLogger(UserService.class.getName());
 

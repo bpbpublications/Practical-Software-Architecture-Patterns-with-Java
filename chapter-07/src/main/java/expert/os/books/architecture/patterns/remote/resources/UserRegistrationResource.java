@@ -1,7 +1,7 @@
 package expert.os.books.architecture.patterns.remote.resources;
 
 import expert.os.books.architecture.patterns.remote.RegisterUser;
-import expert.os.books.architecture.patterns.remote.UserCreatedResponse;
+import expert.os.books.architecture.patterns.remote.dto.UserCreatedResponse;
 import expert.os.books.architecture.patterns.remote.UserService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
@@ -24,7 +24,7 @@ class UserRegistrationResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response register(RegisterUser request) {
         try {
-            UserCreatedResponse newUser = registrationHandler.handle(request);
+            var newUser = registrationHandler.handle(request);
             return Response.accepted(newUser).build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();

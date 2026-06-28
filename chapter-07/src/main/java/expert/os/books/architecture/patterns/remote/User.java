@@ -3,7 +3,7 @@ package expert.os.books.architecture.patterns.remote;
 import java.util.Objects;
 import java.util.UUID;
 
-public class User {
+class User {
 
     private UUID id;
 

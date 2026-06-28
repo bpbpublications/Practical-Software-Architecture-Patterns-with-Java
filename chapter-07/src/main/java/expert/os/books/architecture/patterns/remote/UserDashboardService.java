@@ -29,6 +29,7 @@ public class UserDashboardService {
     }
 
     public Optional<UserDashboardResponse> findDashboard(UUID userId) {
+        LOGGER.info("[PROJECTION] Retrieving dashboard for: " + userId);
         return repository.findDashboard(userId)
                 .map(dashboard -> new UserDashboardResponse(dashboard.userId(), dashboard.name(), dashboard.email()));
     }

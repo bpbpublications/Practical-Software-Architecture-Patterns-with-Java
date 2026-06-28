@@ -1,5 +1,6 @@
-package expert.os.books.architecture.patterns.remote;
+package expert.os.books.architecture.patterns.remote.resources;
 
+import expert.os.books.architecture.patterns.remote.UserDashboardRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;

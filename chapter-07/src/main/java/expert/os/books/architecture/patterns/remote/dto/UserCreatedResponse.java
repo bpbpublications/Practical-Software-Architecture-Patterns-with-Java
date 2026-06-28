@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.remote;
+package expert.os.books.architecture.patterns.remote.dto;
 
 import java.util.UUID;
 

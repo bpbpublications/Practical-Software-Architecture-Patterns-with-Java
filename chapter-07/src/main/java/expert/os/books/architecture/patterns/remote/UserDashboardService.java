@@ -1,5 +1,6 @@
 package expert.os.books.architecture.patterns.remote;
 
+import expert.os.books.architecture.patterns.remote.dto.UserDashboardResponse;
 import expert.os.books.architecture.patterns.remote.events.UserRegisteredEvent;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.ObservesAsync;
@@ -27,7 +28,8 @@ public class UserDashboardService {
         LOGGER.info("[PROJECTION] Materialized view updated in NoSQL DB for: " + event.userId());
     }
 
-    public Optional<UserDashboard> findDashboard(UUID userId) {
-        return repository.findDashboard(userId);
+    public Optional<UserDashboardResponse> findDashboard(UUID userId) {
+        return repository.findDashboard(userId)
+                .map(dashboard -> new UserDashboardResponse(dashboard.userId(), dashboard.name(), dashboard.email()));
     }
 }

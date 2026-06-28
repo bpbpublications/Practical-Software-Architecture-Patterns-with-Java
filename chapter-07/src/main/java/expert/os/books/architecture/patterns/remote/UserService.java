@@ -8,9 +8,9 @@ import java.util.UUID;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-class UserRegistrationHandler {
+class UserService {
 
-    private static final Logger LOGGER = Logger.getLogger(UserRegistrationHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(UserService.class.getName());
 
     @Inject
     private Event<UserRegisteredEvent> cdiEventPublisher; // Native Jakarta EE Event Bus

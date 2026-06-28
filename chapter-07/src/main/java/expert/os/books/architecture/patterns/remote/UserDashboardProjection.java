@@ -1,5 +1,6 @@
 package expert.os.books.architecture.patterns.remote;
 
+import expert.os.books.architecture.patterns.remote.resources.UserRegisteredEvent;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;

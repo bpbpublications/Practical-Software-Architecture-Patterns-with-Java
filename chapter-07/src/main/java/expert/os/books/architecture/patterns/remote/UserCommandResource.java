@@ -11,7 +11,7 @@ import jakarta.ws.rs.core.Response;
 
 @Path("/api/v1/commands/users")
 @ApplicationScoped
-class UserCommandController {
+class UserCommandResource {
 
     @Inject
     private UserCommandService commandService;

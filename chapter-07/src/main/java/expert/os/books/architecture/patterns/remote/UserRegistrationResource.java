@@ -21,9 +21,8 @@ class UserRegistrationResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response register(RegisterUser request) {
         try {
-            var newUserId = registrationHandler.handle(request);
-            return Response.accepted(new UserResponse(newUserId, "Processing")).build();
-
+            var newUser = registrationHandler.handle(request);
+            return Response.accepted(newUser).build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
         }

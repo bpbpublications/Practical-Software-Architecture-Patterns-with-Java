@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @ApplicationScoped
-public class UserRepository {
+class UserRepository {
 
     private Map<UUID, User> users = new java.util.concurrent.ConcurrentHashMap<>();
 

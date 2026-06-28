@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.remote;
+package expert.os.books.architecture.patterns.remote.resources;
 
 import java.time.Instant;
 import java.util.UUID;

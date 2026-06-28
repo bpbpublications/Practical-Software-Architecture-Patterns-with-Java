@@ -1,7 +1,6 @@
 package expert.os.books.architecture.patterns.remote;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
 
 import java.util.Map;
 import java.util.Optional;
@@ -9,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-class UserDashboardRepository {
+public class UserDashboardRepository {
 
     private static final Logger LOGGER = Logger.getLogger(UserDashboardRepository.class.getName());
 

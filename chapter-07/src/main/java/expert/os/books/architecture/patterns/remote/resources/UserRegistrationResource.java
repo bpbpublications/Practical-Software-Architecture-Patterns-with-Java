@@ -1,7 +1,6 @@
 package expert.os.books.architecture.patterns.remote.resources;
 
 import expert.os.books.architecture.patterns.remote.RegisterUser;
-import expert.os.books.architecture.patterns.remote.dto.UserCreatedResponse;
 import expert.os.books.architecture.patterns.remote.UserService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

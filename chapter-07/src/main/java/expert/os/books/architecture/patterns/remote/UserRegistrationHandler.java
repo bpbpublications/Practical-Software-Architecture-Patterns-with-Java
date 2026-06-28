@@ -15,9 +15,9 @@ class UserRegistrationHandler {
     @Inject
     private Event<UserRegisteredEvent> cdiEventPublisher; // Native Jakarta EE Event Bus
 
-    public String handle(RegisterUser request) {
+    public UUID handle(RegisterUser request) {
 
-        String newUserId = UUID.randomUUID().toString().substring(0, 8);
+        UUID newUserId = UUID.randomUUID();
 
         UserRegisteredEvent fact = new UserRegisteredEvent(newUserId, request.name(), request.email());
 

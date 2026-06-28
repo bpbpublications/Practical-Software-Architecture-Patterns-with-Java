@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-public class UserDashboardRepository {
+class UserDashboardRepository {
 
     private static final Logger LOGGER = Logger.getLogger(UserDashboardRepository.class.getName());
 

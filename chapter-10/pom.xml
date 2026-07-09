@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>expert.os.books.architecture.patterns</groupId>
-    <artifactId>chapter-14</artifactId>
+    <artifactId>chapter-12</artifactId>
     <version>1.0.0</version>
 
-    <name>chapter-14</name>
+    <name>chapter-12</name>
     <url>http://www.os.expert</url>
 
     <properties>
@@ -21,7 +21,7 @@
         <maven.surefire.plugin.version>3.5.5</maven.surefire.plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.vesion>3.12.0</maven-javadoc-plugin.vesion>
-        <langchain4j-cdi.version>1.3.0</langchain4j-cdi.version>
+        <langchain4j-cdi.version>1.3.2</langchain4j-cdi.version>
     </properties>
 
     <dependencies>
@@ -55,13 +55,7 @@
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-open-ai</artifactId>
-            <version>1.15.0</version>
-        </dependency>
-        <dependency>
-            <groupId>dev.langchain4j</groupId>
-            <artifactId>langchain4j-mcp</artifactId>
-            <version>1.15.0-beta25</version>
-            <scope>compile</scope>
+            <version>1.16.0</version>
         </dependency>
     </dependencies>
 

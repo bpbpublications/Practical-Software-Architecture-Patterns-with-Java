@@ -1,20 +1,23 @@
-
 ```mermaid
 graph TD
-    User([User]) --> Backend[Application Backend]
-    Backend --> Retrieve[Retrieve Conversation History]
-    Retrieve --> DB[(PostgreSQL / Redis)]
-    DB --> Assemble[Assemble Prompt]
-    Assemble --> Send[Send Full Context]
-    Send --> LLM[[LLM Inference API]]
-    LLM --> Response([Generated Response])
-    
-    style User fill:#F8F7F7,stroke:#019DDC,stroke-width:2px,color:#1D5183
-    style Backend fill:#1D5183,stroke:#019DDC,stroke-width:2px,color:#F8F7F7
-    style Retrieve fill:#F8F7F7,stroke:#1D5183,stroke-width:2px,color:#1D5183
-    style DB fill:#F8F7F7,stroke:#019DDC,stroke-width:2px,color:#1D5183
-    style Assemble fill:#F8F7F7,stroke:#1D5183,stroke-width:2px,color:#1D5183
-    style Send fill:#F8F7F7,stroke:#1D5183,stroke-width:2px,color:#1D5183
-    style LLM fill:#1D5183,stroke:#019DDC,stroke-width:2px,color:#F8F7F7
-    style Response fill:#F8F7F7,stroke:#019DDC,stroke-width:2px,color:#1D5183
+    subgraph Traditional Lexical Search
+        Q1[Query: 'Puppy Food'] --> DB1[(Relational DB)]
+        DB1 -->|No match for 'Puppy'| Miss[0 Results]
+    end
+
+    subgraph Semantic Vector Search
+        Q2[Query: 'Puppy Food'] --> Embed[[Embedding Model]]
+        Embed -->|"[0.12, -0.45, ...]"| DB2[(Vector DB)]
+        DB2 -->|Cosine Similarity Match| Hit[Result: 'Dog Nutrition']
+    end
+
+    style Q1 fill:#F8F7F7,stroke:#1D5183,stroke-width:2px,color:#1D5183
+    style DB1 fill:#F8F7F7,stroke:#1D5183,stroke-width:2px,color:#1D5183
+    style Miss fill:#F8F7F7,stroke:#1D5183,stroke-width:2px,color:#1D5183
+
+    style Q2 fill:#F8F7F7,stroke:#019DDC,stroke-width:2px,color:#1D5183
+    style Embed fill:#1D5183,stroke:#019DDC,stroke-width:2px,color:#F8F7F7
+    style DB2 fill:#F8F7F7,stroke:#019DDC,stroke-width:2px,color:#1D5183
+    style Hit fill:#F8F7F7,stroke:#019DDC,stroke-width:2px,color:#1D5183
+
 ```

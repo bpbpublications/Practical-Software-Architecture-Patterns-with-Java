@@ -1,4 +1,4 @@
-package expert.os.books.architecture.patterns.scenario01;
+package expert.os.books.architecture.patterns;
 
 import org.junit.jupiter.api.Test;
 

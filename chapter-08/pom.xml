@@ -119,8 +119,8 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-weld</artifactId>
-            <version>6.11.0</version>
+            <artifactId>cucumber-jakarta-cdi</artifactId>
+            <version>7.34.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

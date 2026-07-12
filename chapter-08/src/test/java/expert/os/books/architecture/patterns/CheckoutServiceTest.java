@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DisplayName("Feature: Promotional Checkout Validations")
 public class CheckoutServiceTest {
 
-    CheckoutService checkoutService;
+    private CheckoutService checkoutService;
 
     @BeforeEach
     void setupService() {

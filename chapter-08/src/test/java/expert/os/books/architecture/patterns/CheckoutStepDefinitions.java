@@ -6,19 +6,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
-import org.junit.Before;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ApplicationScoped
 public class CheckoutStepDefinitions {
 
-    // Internal State shared across the Given/When/Then steps
 
     private CheckoutService checkoutService;
     private BigDecimal cartTotal;

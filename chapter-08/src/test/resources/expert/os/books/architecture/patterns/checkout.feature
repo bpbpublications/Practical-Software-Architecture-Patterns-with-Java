@@ -3,7 +3,6 @@ Feature: Promotional Checkout Validations
   I want discount vouchers to apply correctly at checkout
   So that we can run successful promotional campaigns
 
-  # Demonstrating @ValueSource equivalents
   Scenario Outline: Processing invalid or expired vouchers
     Given my shopping cart total is $100.00
     When I apply the invalid voucher "<code>"
@@ -15,7 +14,6 @@ Feature: Promotional Checkout Validations
       | INVALID    |
       | UNKNOWN    |
 
-  # Demonstrating @MethodSource equivalents
   Scenario Outline: Processing standard active discounts
     Given a valid voucher "<code>" exists
     And my shopping cart total is $<cart_total>
@@ -27,7 +25,6 @@ Feature: Promotional Checkout Validations
       | SUMMER20   | 100.00     | 80.00       | Equivalence: Standard active 20%|
       | VIP-HALF   | 50.00      | 25.00       | Equivalence: Standard active 50%|
 
-  # Demonstrating Edge Cases
   Scenario Outline: Processing extreme edge cases safely
     Given my shopping cart total is $<cart_total>
     When I apply the voucher "<code>"

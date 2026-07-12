@@ -27,7 +27,7 @@ public class CheckoutServiceTest {
             case "VIP-HALF" -> Optional.of(new Voucher("VIP-HALF", new BigDecimal("0.50"), true));
             case "FREE100" -> Optional.of(new Voucher("FREE100", new BigDecimal("1.00"), true));
             case "EXPIRED50" -> Optional.of(new Voucher("EXPIRED50", new BigDecimal("0.50"), false));
-            default -> Optional.empty(); // Unknown/Invalid vouchers return empty
+            default -> Optional.empty();
         };
         checkoutService = new CheckoutService(fakeRepo);
     }

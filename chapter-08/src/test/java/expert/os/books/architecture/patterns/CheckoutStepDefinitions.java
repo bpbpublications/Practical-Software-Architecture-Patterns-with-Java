@@ -32,8 +32,6 @@ public class CheckoutStepDefinitions {
         checkoutService = new CheckoutService(fakeRepo);
     }
 
-    // --- THE CONTEXT (Given) ---
-
     @Given("my shopping cart total is ${bigdecimal}")
     public void my_shopping_cart_total_is(BigDecimal total) {
         this.cartTotal = total;
@@ -54,7 +52,6 @@ public class CheckoutStepDefinitions {
     @Then("the final checkout price should be ${bigdecimal}")
     @Then("the system should handle the extreme boundary and return ${bigdecimal}")
     public void the_final_checkout_price_should_be(BigDecimal expectedPrice) {
-        // Fluent AssertJ Assertion
         assertThat(finalPrice)
                 .as("The calculated price did not match the business specification!")
                 .isEqualByComparingTo(expectedPrice);

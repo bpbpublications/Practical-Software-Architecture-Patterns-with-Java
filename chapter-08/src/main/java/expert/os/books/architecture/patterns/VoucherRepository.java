@@ -1,5 +1,7 @@
 package expert.os.books.architecture.patterns;
 
+import java.util.Optional;
+
 public interface VoucherRepository {
-    Voucher findByCode(String code);
+    Optional<Voucher> findByCode(String code);
 }

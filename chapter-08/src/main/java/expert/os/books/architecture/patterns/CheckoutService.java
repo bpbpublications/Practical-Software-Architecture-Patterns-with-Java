@@ -4,6 +4,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @ApplicationScoped
@@ -18,15 +19,16 @@ class CheckoutService {
     }
 
     public BigDecimal applyVoucher(String code, BigDecimal cartTotal) {
-        Voucher voucher = voucherRepository.findByCode(code);
+        LOGGER.info("Applying voucher with code: " + code);
+        Optional<Voucher> voucher = voucherRepository.findByCode(code);
 
-        // If voucher doesn't exist or is inactive, return the original total
-        if (voucher == null || !voucher.isActive()) {
-            LOGGER.info("Voucher invalid or inactive. No discount applied.");
-            return cartTotal;
-        }
-
-        BigDecimal discountAmount = cartTotal.multiply(voucher.discountPercentage());
-        return cartTotal.subtract(discountAmount);
+        return voucher.filter(Voucher::isActive)
+                .map(v -> {
+                    BigDecimal discountAmount = cartTotal.multiply(v.discountPercentage());
+                    return cartTotal.subtract(discountAmount);
+                }).orElseGet(() -> {
+                    LOGGER.info("Voucher invalid or inactive. No discount applied.");
+                    return cartTotal;
+                });
     }
 }

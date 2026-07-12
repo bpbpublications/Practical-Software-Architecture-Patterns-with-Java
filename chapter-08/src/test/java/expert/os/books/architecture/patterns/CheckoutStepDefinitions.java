@@ -10,6 +10,7 @@ import jakarta.inject.Inject;
 import org.junit.Before;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,13 +26,12 @@ public class CheckoutStepDefinitions {
 
     @PostConstruct
     void setupScenario() {
-        // A Fake Repository implementing our test data state in-memory
         VoucherRepository fakeRepo = code -> switch (code) {
-            case "SUMMER20" -> new Voucher("SUMMER20", new BigDecimal("0.20"), true);
-            case "VIP-HALF" -> new Voucher("VIP-HALF", new BigDecimal("0.50"), true);
-            case "FREE100"  -> new Voucher("FREE100",  new BigDecimal("1.00"), true);
-            case "EXPIRED50"-> new Voucher("EXPIRED50",new BigDecimal("0.50"), false);
-            default -> null; // Unknown/Invalid vouchers return null
+            case "SUMMER20" -> Optional.of(new Voucher("SUMMER20", new BigDecimal("0.20"), true));
+            case "VIP-HALF" -> Optional.of(new Voucher("VIP-HALF", new BigDecimal("0.50"), true));
+            case "FREE100"  -> Optional.of(new Voucher("FREE100",  new BigDecimal("1.00"), true));
+            case "EXPIRED50"-> Optional.of(new Voucher("EXPIRED50",new BigDecimal("0.50"), false));
+            default -> Optional.empty();
         };
         checkoutService = new CheckoutService(fakeRepo);
     }
@@ -45,21 +45,14 @@ public class CheckoutStepDefinitions {
 
     @Given("a valid voucher {string} exists")
     public void a_valid_voucher_exists(String code) {
-        // In a true End-to-End test, this step would seed a database.
-        // For our Domain test, the Fake Repository is already pre-seeded in @Before.
+
     }
 
-    // --- THE ACTION (When) ---
-
-    // Stacking annotations allows us to reuse the exact same Java logic
-    // regardless of how the business analyst phrased the Gherkin step!
     @When("I apply the invalid voucher {string}")
     @When("I apply the voucher {string}")
     public void i_apply_the_voucher(String code) {
         this.finalPrice = checkoutService.applyVoucher(code, cartTotal);
     }
-
-    // --- THE VERIFICATION (Then) ---
 
     @Then("the final checkout price should remain unchanged at ${bigdecimal}")
     @Then("the final checkout price should be ${bigdecimal}")
